@@ -1,0 +1,35 @@
+.calendar-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .fc-event {
+    cursor: pointer;
+  }
+  
+  .fc-event-title {
+    font-weight: bold;
+  }
+  
+  .fc-day-today {
+    background-color: rgba(255,220,40,0.15) !important;
+  }
+  
+  .fc-button-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .fc-button-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .fc-button-primary:not(:disabled):active,
+  .fc-button-primary:not(:disabled).fc-button-active {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }

@@ -13,6 +13,11 @@
   "author": "Brad Traversy",
   "license": "MIT",
   "dependencies": {
+    "@fullcalendar/bootstrap": "^6.1.15",
+    "@fullcalendar/core": "^6.1.15",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@fullcalendar/timegrid": "^6.1.15",
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
@@ -25,7 +30,7 @@
     "mongoose": "^7.1.0",
     "react-big-calendar": "^1.12.1",
     "react-native-animated-multistep": "^1.1.1",
-    "sass": "^1.75.0"
+    "sass": "1.77.1"
   },
   "devDependencies": {
     "concurrently": "^8.0.1",

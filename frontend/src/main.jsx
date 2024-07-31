@@ -19,9 +19,10 @@ import PrivateRoute from './components/PrivateRoute.jsx';
 import Controle from './screens/Controle.jsx';
 import Planning from './screens/Planning.jsx';
 import QualityControlForm from './screens/report.jsx';
-import CollabForm from './screens/CollabScreen.jsx';
+// import CollabForm from './screens/CollabScreen.jsx';
 import UserSearchAndAssignScreen from './screens/UserSearchAndAssignScreen.jsx';
 // import CalendarScreen from './screens/CalendarScreen.jsx';
+import PlanningCalendar from './screens/PlanningCalendar.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,8 +32,8 @@ const router = createBrowserRouter(
       <Route path='/login' element={<LoginScreen />} />
       <Route path='/register' element={<RegisterScreen />} />
       <Route path='/planning' element={<Planning />} />
-      <Route path='/collab' element={<CollabForm />} />
-      {/* <Route path='/calendar' element={<CalendarScreen />} /> */}
+      {/* <Route path='/collab' element={<CollabForm />} /> */}
+      <Route path='/calendar' element={<PlanningCalendar />} />
       <Route path='/user' element={<UserSearchAndAssignScreen />} />
       <Route path='/report' element={<QualityControlForm />} />
       <Route path='' element={<PrivateRoute />}>

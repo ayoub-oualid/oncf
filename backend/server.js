@@ -9,6 +9,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import userRoutes from './routes/userRoutes.js';
 import eventRoutes from './routes/eventRoutes.js';
 import collabRoutes from './routes/collabRoutes.js';
+import planningRoutes from './routes/planningRoutes.js'
 
 const port = process.env.PORT || 5000;
 connectDB();
@@ -30,6 +31,7 @@ app.use(
 app.use('/api/users', userRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/collabs', collabRoutes);
+app.use('/api/planning', planningRoutes);
 
 if (process.env.NODE_ENV === 'production') {
   const __dirname = path.resolve();
