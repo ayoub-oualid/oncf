@@ -25,6 +25,15 @@ const collabSchema = new mongoose.Schema(
         'rabat', 'fes', 'tanger', 'marrakesh', 'kenitra', 'oujda', 'casablanca', 'agadir', 'laayoune', 'dakhla', 'nador', 'tetouan', 'eljadida', 'meknes', 'safi', 'khouribga', 'beni mellal', 'taza', 'taounate', 'taourirt', 'tafraout', 'taroudant', 'tiznit'
       ],
     },
+    dateIns: {
+      type: Date,
+      default: null,
+    },
+    affected: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      default: null,
+    },
     fctOracle: {
       type: String,
       enum: ['CL', 'CTR', 'ECT', 'EF'],

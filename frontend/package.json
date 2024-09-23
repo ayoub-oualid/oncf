@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "css-compile": "sass ./src/main.scss:./src/main.css"
   },
   "dependencies": {
     "@fullcalendar/bootstrap": "^6.1.15",
@@ -17,9 +18,9 @@
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
     "@reduxjs/toolkit": "^1.9.5",
-    "bootstrap": "^5.2.3",
+    "bootstrap": "^5.3.3",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.7.4",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-redux": "^8.0.5",

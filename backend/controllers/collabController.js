@@ -79,3 +79,52 @@ export const deleteCollab = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+// @desc    Get collaborator statistics
+// @route   GET /api/collabs/stats
+// @access  Private
+import asyncHandler from 'express-async-handler';
+
+// @desc    Get collaborator stats
+// @route   GET /api/collabs/stats
+// @access  Private
+const getCollaboratorStats = asyncHandler(async (req, res) => {
+  try {
+    const totalCollaborators = await Collab.countDocuments({});
+    const assignedCollaborators = await Collab.countDocuments({ affected: { $ne: null } });
+    const unassignedCollaborators = await Collab.countDocuments({ affected: null });
+    
+    const assignmentsByInspector = await Collab.aggregate([
+      { $match: { affected: { $ne: null } } },
+      { $group: { _id: '$affected', count: { $sum: 1 } } },
+      {
+        $lookup: {
+          from: 'users',  // Assuming your users collection is named 'users'
+          localField: '_id',
+          foreignField: '_id',
+          as: 'inspector'
+        }
+      },
+      { $unwind: '$inspector' },
+      {
+        $project: {
+          _id: 0,
+          inspectorId: '$_id',
+          inspectorName: '$inspector.name',
+          count: 1
+        }
+      }
+    ]);
+
+    res.json({
+      totalCollaborators,
+      assignedCollaborators,
+      unassignedCollaborators,
+      assignmentsByInspector,
+    });
+  } catch (error) {
+    console.error('Error fetching collaborator stats:', error);
+    res.status(500).json({ message: 'An error occurred while fetching collaborator stats.' });
+  }
+});
+
+export { getCollaboratorStats };

@@ -2,12 +2,15 @@ $theme-colors: (
     "primary": #EA651A,
     "secondary": #6C757D,
     "success": #28A745,
-
 );
+
 $body-bg: #f8f9fa;
 $body-color: #212529;
+
+
+
 .rbc-time-gutter {
     display: none;
-  }
+}
 
-@import 'bootstrap/scss/bootstrap.scss';
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

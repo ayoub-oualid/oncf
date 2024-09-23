@@ -33,10 +33,6 @@ const userSchema = mongoose.Schema(
     fct: {
       type: String,
     },
-    collabs: {
-      type: [Object],
-      default: [],
-    },
   },
   {
     timestamps: true,

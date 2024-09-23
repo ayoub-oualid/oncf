@@ -1,3 +1,5 @@
+import './main.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
@@ -7,7 +9,6 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import './index.scss';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import store from './store';
 import { Provider } from 'react-redux';
@@ -19,10 +20,10 @@ import PrivateRoute from './components/PrivateRoute.jsx';
 import Controle from './screens/Controle.jsx';
 import Planning from './screens/Planning.jsx';
 import QualityControlForm from './screens/report.jsx';
-// import CollabForm from './screens/CollabScreen.jsx';
 import UserSearchAndAssignScreen from './screens/UserSearchAndAssignScreen.jsx';
-// import CalendarScreen from './screens/CalendarScreen.jsx';
 import PlanningCalendar from './screens/PlanningCalendar.jsx';
+import CreateCollab from './screens/CreateCollabScreen.jsx';
+import CollabListScreen from './screens/CollabListScreen.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,8 +32,8 @@ const router = createBrowserRouter(
       <Route path='/controle' element={<Controle />} />
       <Route path='/login' element={<LoginScreen />} />
       <Route path='/register' element={<RegisterScreen />} />
-      <Route path='/planning' element={<Planning />} />
-      {/* <Route path='/collab' element={<CollabForm />} /> */}
+      <Route path='/collab' element={<CreateCollab />} />
+      <Route path='/collab-list' element={<CollabListScreen />} />
       <Route path='/calendar' element={<PlanningCalendar />} />
       <Route path='/user' element={<UserSearchAndAssignScreen />} />
       <Route path='/report' element={<QualityControlForm />} />
